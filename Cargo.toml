@@ -1,0 +1,43 @@
+[package]
+name = "webservice-axum-seaorm"
+version = "1.0.0"
+edition = "2021"
+build = "build.rs"
+
+[profile.release]
+lto = "fat"
+
+[dependencies]
+anyhow = "1"
+axum = { version = "0.7", features = ["json", "macros"] }
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4", features = ["derive", "env", "wrap_help"] }
+num_cpus = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sqlx = { version = "0.7", features = [
+  "chrono",
+  "postgres",
+  "runtime-tokio",
+  "uuid",
+] }
+sea-orm = { version = "1.0.0-rc.7", features = [
+  "sqlx-postgres",
+  "runtime-tokio-rustls",
+  "macros",
+  "with-chrono",
+  "with-uuid",
+] }
+sea-orm-migration = { version = "1.0.0-rc.7", features = [
+  "sqlx-postgres",
+  "runtime-tokio-rustls",
+] }
+thiserror = "1"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["json"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+log = "0.4"
+
+[build-dependencies]
+vergen-git2 = "1.0.0-beta.2"
