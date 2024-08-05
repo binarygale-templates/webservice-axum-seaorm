@@ -21,7 +21,7 @@ sqlx = { version = "0.7", features = [
   "runtime-tokio",
   "uuid",
 ] }
-sea-orm = { version = "1.0.0-rc.7", features = [
+sea-orm = { version = "1.0.0", features = [
   "sqlx-postgres",
   "runtime-tokio-rustls",
   "macros",
