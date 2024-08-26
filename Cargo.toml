@@ -40,4 +40,4 @@ uuid = { version = "1", features = ["v4", "serde"] }
 log = "0.4"
 
 [build-dependencies]
-vergen-git2 = "1.0.0-beta.2"
+vergen-git2 = "1"
